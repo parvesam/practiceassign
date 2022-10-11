@@ -3,22 +3,20 @@ import Warrior
 import Soldier
 
 w=Warrior.Warrior()
-w.show()
 s=Soldier.Soldier()
-s.show()
 v = random.randrange(1,7)
 
 if v==1 or v==2 or v==3:
     w.strength =w.strength -2
     w.health =w.health -2
     w.logic = w.logic -2
-    w.show()
+    
 
 elif v ==4 or v==5 or v==6:
     w.strength =w.strength +2
     w.health =w.health +2
     w.logic =w.logic +2
-    w.show()
+    
 #setup
 n=0
 any = dice.apple()
@@ -28,14 +26,22 @@ directions = ["left", "right", "forward", "backward"]
 #Start of the game
 name = input("What is your name? ") #user inputs their name
 print("Welcome, " + name + ". Let's solve this hunting game!")
-roll = input("Which role would you like to choose? role 1 or role 2. " ) #user gets to choose between the two roles
+roll = input("Which role would you like to choose? role 1 or role 2. ") #user gets to choose between the two roles
 if roll == "role 1":
     print("role 1 = Warrior. you chose a Warrior.") #if user chooses role 1 then it's warrior.
 elif roll == "role 2":
     print("role 2 = Soldier. you chose a Soldier.") #if user chooses role 2 then it's soldier.
 
+print('''You live in a kingdom serving for the King. It looks like someone has stolen his crown.
+print("The King suspects someone from the kingdom might has stolen it.
+He appoints you to find it for him. He also promises you to reward for doing him this favour.
+Will you be able to find his crown?
+Let's start playing the game. All the best!''')
+
 player1_score = 0 # player 1 is user
 player2_score = 0 # player 2 is monster
+
+print("Your first challenge is to defeat the monster.")
 
 response = ""
 points = 0
@@ -62,7 +68,7 @@ for i in range(no):
 
     if user == monster:
         print("Both players selected {user}. It's a tie!") #if its a tie then no change in the points
-        w.health == 0
+        print(w.strength)
     elif user == "rock":
         if monster == "scissors":
             print("Rock smashes scissors! You win!")
@@ -70,7 +76,7 @@ for i in range(no):
         else:
             print("Paper covers rock! You lose.")
             player2_score = player2_score + 1 #This is how we increment a variable in points.
-            w.health == -1
+            print(w.strength)
 
     elif user == "paper":
         if monster == "rock":
@@ -79,7 +85,7 @@ for i in range(no):
         else:
             print("Scissors cuts paper! You lose.")
             player2_score = player2_score + 1 #This is how we increment a variable in points.
-            w.health == -1
+            print(w.strength)
     elif user == "scissors":
         if monster == "paper":
             print("Scissors cuts paper! You win!")
@@ -87,7 +93,7 @@ for i in range(no):
         else:
             print("Rock smashes scissors! You lose.")
             player2_score = player2_score + 1 #This is how we increment a variable in points.
-            w.health == -1
+            print(w.strength)
             
         points = points + no
 print("Player 1 score:", player1_score) #prints the score for both players which is the user score and the monster(computer) score.
@@ -98,9 +104,11 @@ class challeg2:
     def show(self):
         response = ""
         while response not in directions: #dice decides which direction the user will go
-            print("To your left, you see a dead end.")
-            print("To your right, there is a scary, dark forest.")
-            print("There is a maze infront of you.")
+            print('''you now reach to a three path way. now the dice decides which of the three paths you would choose.
+To your left, you see a dead end.
+To your right, there is a scary, dark forest.
+If you move forward then you reach a treasure chest".
+This looks more like a maze is infront of you.''')
             name3 = input("Would you like to roll the dice? ")
             if name3 == "yes" or name3 == "y":
                 print("You rolled a: ", no)
@@ -109,35 +117,45 @@ class challeg2:
                     print("You chose the left direction. The road ends here. Farewell.")
                     quit()
                 elif no == 3 or no == 4:
-                    print("You chose the right direction.")
+                    print("You chose the right direction.You head deeper into the forest and get eaten by a bear.")
                     break
                 elif no == 5 or no == 6:
-                    print("You chose to move forward.")
-                    break
+                    print("You chose to move forward.You win! You have now entered challenge 3.")
+                    name4 = input("do you want to roll the dice? ")
+                    if name4 == "yes" or name4 == "y":
+                      print("You rolled a: ", no)
+                      any.dice(no)
+                      if no == 1 or no == 2 or no == 3:
+                            print("You got a ",no,". you find the crown and return it to the King! Congrats,"+name+" you won the game.")
+                            quit()
+                      elif no == 4 or no == 5 or no == 6:
+                           print("you got a",no,". You couldn't find the crown. You lost the game! Goodbye,"+name+"")
+                           quit()
+                    else: name4 == "no" or name4 == "n"
+                    print("Goodbye,"+name+"")
                 else:
                     print("I did not understand that. Try again!")
             elif name3 == "no" or name3 == "n":
-                print("You are not ready for this game. Goodbye, " + name + ".")
-                quit()
-        print("write my story")
+                    print("You are not ready for this game. Goodbye, " + name + ".")
+                    quit()
 
 a = challeg2()
-if player1_score < player2_score:
-    print ("you lost! Goodbye, " + name + ".") #if user loses then the game ends
+if player1_score < player2_score: #if user score is less than the monster score then the game ends
+    print ("you lost! Goodbye," + name + ".") #if user loses then the game ends
     exit()
-if player2_score < player1_score:
-    print ("you win! Congrats , " + name + ".") #congrats the user for winning
+if player2_score < player1_score: #if user score is greater than the monster score then the user wins
+    print ("you win! Congrats," + name + ".") #sneds a congrats the user for winning
     name1 = input("do you want to continue playing? ") #asks user if they want to continue playing
-    if response == "yes" or response == "y":
+    if response == "yes" or response == "y": #using if else statement for response from the user
         print("Here is your next challenge: ")
         a.show()
-    elif response == "no" or response == "n":
+    elif response == "no" or response == "n": #if user does not want to play then the game ends when user types in "no"
         print("You are not ready for this game. Goodbye, " + name + ".")
         quit()
     else: 
         print("I didn't understand that.\n")
 if player2_score == player1_score:
-    name2 = input("do you want to continue playing? ")
+    name2 = input("do you want to continue playing? ") #asks the user if they want to continue playing
     if response == "yes" or response == "y":
         print("Here is your next challenge: ")
         a.show()
@@ -146,5 +164,3 @@ if player2_score == player1_score:
         quit()
     else: 
         print("I didn't understand that.\n")
-
-#part 3 of the game
