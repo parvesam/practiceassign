@@ -1,4 +1,4 @@
-class Warrior:
+class Warrior: #role 1 warrior attributes
     def __init__(self):
         self.strength=2
         self.health=1

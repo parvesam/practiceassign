@@ -21,7 +21,7 @@ if roll == "role 1":
 elif roll == "role 2":
     print("role 2 = Soldier. you chose a Soldier.") #if user chooses role 2 then it's soldier.
 
-if roll == "role 1":
+if roll == "role 1": #role 1 attributes
     v==1 or v==2 or v==3
     w1 =w.strength 
     w2 =w.health 
@@ -32,7 +32,7 @@ elif v ==4 or v==5 or v==6:
     w2 =w.health 
     w3 =w.logic 
 
-elif roll == "role 2" or v==1 or v==2 or v==3:
+elif roll == "role 2" or v==1 or v==2 or v==3: #role 2 attributes
     s1 = s.strength 
     s2 = s.health 
     s3 = s.logic
@@ -42,7 +42,6 @@ elif v==4 or v==5 or v==6:
     s2 = s.health
     s3 = s.logic
      
-
 print('''You live in a kingdom serving for the King. It looks like someone has stolen his crown.
 The King suspects someone from the kingdom might has stolen it.
 He appoints you to find it for him. He also promises you to reward you for doing him this favour.
@@ -90,7 +89,7 @@ for i in range(no):
                 print("w.strength = +1")
             elif roll == "role 2":
                 print("s.strength = +1")
-            player1_score = player1_score + 1  #This is how we increment a variablein points.
+            player1_score = player1_score + 1  #This is how we increment a variable in points.
         else:
             print("Paper covers rock! You lose.")
             if roll == "role 1":
@@ -162,7 +161,7 @@ This looks more like a maze is infront of you.''')
                      print("s.health = -2")
                     break
                 elif no == 5 or no == 6:
-                    print("You chose to move forward.You win! You have now entered challenge 3.")
+                    print("You chose to move forward. You win! You have found the treasure chest and now you have entered challenge 3.")
                     if roll == "role 1":
                      print("w.health = +2")
                     elif roll == "role 2":
@@ -172,18 +171,18 @@ This looks more like a maze is infront of you.''')
                       print("You rolled a: ", no)
                       any.dice(no)
                       if no == 1 or no == 2 or no == 3:
-                            print("You got a ",no,". you find the crown and return it to the King! Congrats,"+name+" you won the game.")
+                            print("You got a ",no,". You couldn't find the crown. You lost the game! Goodbye,"+name+"")
                             if roll == "role 1":
-                             print("w.logic = +2")
+                             print("w.logic = -2")
                             elif roll == "role 2":
-                             print("s.logic = +2")
+                             print("s.logic = -2")
                             quit()
                       elif no == 4 or no == 5 or no == 6:
-                           print("you got a",no,". You couldn't find the crown. You lost the game! Goodbye,"+name+"")
+                           print("you got a",no,". you found the crown inside the treasure chest and return it to the King! Congrats,"+name+" you won the game!")
                            if roll == "role 1":
-                            print("w.logic = -2")
+                            print("w.logic = +2")
                            elif roll == "role 2":
-                            print("s.logic = -2")
+                            print("s.logic = +2")
                            quit()
                     else: name4 == "no" or name4 == "n"
                     print("Goodbye,"+name+"")
