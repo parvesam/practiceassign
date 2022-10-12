@@ -77,7 +77,7 @@ for i in range(no):
     print(f"\nYou chose {user}, monster chose {monster}.\n")
 
     if user == monster:
-        print("Both players selected {user}. It's a tie!") #if its a tie then no change in the points
+        print("Both players selected the same. It's a tie!") #if its a tie then no change in the points
         if roll == "role 1":
                 print("w.strength = 0")
         elif roll == "role 2":
