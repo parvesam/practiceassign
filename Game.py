@@ -171,18 +171,18 @@ This looks more like a maze is infront of you.''')
                       print("You rolled a: ", no)
                       any.dice(no)
                       if no == 1 or no == 2 or no == 3:
-                            print("You got a ",no,". You couldn't find the crown. You lost the game! Goodbye,"+name+"")
-                            if roll == "role 1":
+                           print("You got a ",no,". You couldn't find the crown. You lost the game! Goodbye,"+name+"")
+                           if roll == "role 1":
                              print("w.logic = -2")
-                            elif roll == "role 2":
+                           elif roll == "role 2":
                              print("s.logic = -2")
-                            quit()
+                           quit()
                       elif no == 4 or no == 5 or no == 6:
                            print("you got a",no,". you found the crown inside the treasure chest and return it to the King! Congrats,"+name+" you won the game!")
                            if roll == "role 1":
-                            print("w.logic = +2")
+                             print("w.logic = +2")
                            elif roll == "role 2":
-                            print("s.logic = +2")
+                             print("s.logic = +2")
                            quit()
                     else: name4 == "no" or name4 == "n"
                     print("Goodbye,"+name+"")
