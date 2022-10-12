@@ -1,8 +1,8 @@
 class Warrior:
     def __init__(self):
-        strength=10
-        health=4
-        logic=7
+        self.strength=2
+        self.health=1
+        self.logic=0
 
     def show(self):
         print(self.strength)
