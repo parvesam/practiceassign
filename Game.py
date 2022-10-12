@@ -1,4 +1,4 @@
-import random, dice
+import random
 import Warrior
 import Soldier
 
@@ -8,7 +8,6 @@ v = random.randint(1,6)
     
 #setup
 n=0
-any = dice.apple() 
 yes_no = ["yes", "no", "y", "n"]
 directions = ["left", "right", "forward"]
 
@@ -168,16 +167,16 @@ This looks more like a maze is infront of you.''')
                      print("s.health = +2")
                     name4 = input("do you want to roll the dice? \nyes/no/y/n\n")
                     if name4 == "yes" or name4 == "y":
-                      print("You rolled a: ", no)
-                      any.dice(no)
-                      if no == 1 or no == 2 or no == 3:
+                       print("You rolled a: ", no)
+                       any.dice(no)
+                       if no == 1 or no == 2 or no == 3:
                            print("You got a ",no,". You couldn't find the crown. You lost the game! Goodbye,"+name+"")
                            if roll == "role 1":
                              print("w.logic = -2")
                            elif roll == "role 2":
                              print("s.logic = -2")
                            quit()
-                      elif no == 4 or no == 5 or no == 6:
+                       elif no == 4 or no == 5 or no == 6:
                            print("you got a",no,". you found the crown inside the treasure chest and return it to the King! Congrats,"+name+" you won the game!")
                            if roll == "role 1":
                              print("w.logic = +2")
@@ -217,3 +216,55 @@ if player2_score == player1_score:
         quit()
     else: 
         print("I didn't understand that.\n")
+
+
+    # Generates a random number
+    # between 1 and 6 (including
+    # both 1 and 6)
+    
+class apple:
+    def dice(self,no):
+     
+     if no == 1:
+        print("""
+                 [-----]
+                 [     ]
+                 [  0  ]
+                 [     ]
+                 [-----]""")
+     if no == 2:
+        print("""
+                 [-----]
+                 [ 0   ]
+                 [     ]
+                 [   0 ]
+                 [-----]""")
+     if no == 3:
+        print("""
+                 [-----]
+                 [     ]
+                 [0 0 0]
+                 [     ]
+                 [-----]""")
+     if no == 4:
+        print(""" 
+                 [-----]
+                 [0   0]
+                 [     ]
+                 [0   0]
+                 [-----]""")
+     if no == 5:
+        print(""" 
+                 [-----]
+                 [0   0]
+                 [  0  ]
+                 [0   0]
+                 [-----]""")
+     if no == 6:
+        print(""" 
+                 [-----]
+                 [0 0 0]
+                 [     ]
+                 [0 0 0]
+                 [-----]""")
+         
