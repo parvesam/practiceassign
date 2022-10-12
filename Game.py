@@ -8,7 +8,7 @@ v = random.randint(1,6)
     
 #setup
 n=0
-any = dice.apple()
+any = dice.apple() 
 yes_no = ["yes", "no", "y", "n"]
 directions = ["left", "right", "forward"]
 
@@ -80,53 +80,53 @@ for i in range(no):
     if user == monster:
         print("Both players selected {user}. It's a tie!") #if its a tie then no change in the points
         if roll == "role 1":
-                print("w.strength = 0",w.strength)
+                print("w.strength = 0")
         elif roll == "role 2":
-                print("s.strength = 0",w.strength)
+                print("s.strength = 0")
     elif user == "rock":
         if monster == "scissors":
             print("Rock smashes scissors! You win!")
             if roll == "role 1":
-                print("w.strength = +1",w.strength)
+                print("w.strength = +1")
             elif roll == "role 2":
-                print("s.strength = +1",s.strength)
+                print("s.strength = +1")
             player1_score = player1_score + 1  #This is how we increment a variablein points.
         else:
             print("Paper covers rock! You lose.")
             if roll == "role 1":
-                print("w.strength = -1",w.strength)
+                print("w.strength = -1")
             elif roll == "role 2":
-                print("s.strength = -1",s.strength)
+                print("s.strength = -1")
             player2_score = player2_score + 1 #This is how we increment a variable in points.
     elif user == "paper":
         if monster == "rock":
             print("Paper covers rock! You win!")
             if roll == "role 1":
-                print("w.strength = +1",w.strength)
+                print("w.strength = +1")
             elif roll == "role 2":
-                print("s.strength = +1",s.strength)
+                print("s.strength = +1")
             player1_score = player1_score + 1  #This is how we increment a variable in points.
         else:
             print("Scissors cuts paper! You lose.")
             if roll == "role 1":
-                print("w.strength = -1",w.strength)
+                print("w.strength = -1")
             elif roll == "role 2":
-                print("s.strength = -1",s.strength)
+                print("s.strength = -1")
             player2_score = player2_score + 1 #This is how we increment a variable in points.
     elif user == "scissors":
         if monster == "paper":
             print("Scissors cuts paper! You win!")
             if roll == "role 1":
-                print("w.strength = +1",w.strength)
+                print("w.strength = +1")
             elif roll == "role 2":
-                print("s.strength = +1",s.strength)
+                print("s.strength = +1")
             player1_score = player1_score + 1  #This is how we increment a variable in points.
         else:
             print("Rock smashes scissors! You lose.")
             if roll == "role 1":
-                print("w.strength = -1",w.strength)
+                print("w.strength = -1")
             elif roll == "role 2":
-                print("s.strength = -1",s.strength)
+                print("s.strength = -1")
             player2_score = player2_score + 1 #This is how we increment a variable in points.
             
         points = points + no
@@ -143,47 +143,47 @@ To your left, you see a dead end.
 To your right, there is a scary, dark forest.
 If you move forward then you reach a treasure chest".
 This looks more like a maze is infront of you.''')
-            name3 = input("Would you like to roll the dice? ")
+            name3 = input("Would you like to roll the dice? \nyes/no/y/n\n")
             if name3 == "yes" or name3 == "y":
                 print("You rolled a: ", no)
                 any.dice(no)
                 if no == 1 or no == 2:
                     print("You chose the left direction. The road ends here. Farewell.")
                     if roll == "role 1":
-                     print("w.health = -1",w.health)
+                     print("w.health = -1")
                     elif roll == "role 2":
-                     print("s.health = -1",s.health)
+                     print("s.health = -1")
                     quit()
                 elif no == 3 or no == 4:
                     print("You chose the right direction.You head deeper into the forest and get eaten by a bear.")
                     if roll == "role 1":
-                     print("w.health = -2",w.health)
+                     print("w.health = -2")
                     elif roll == "role 2":
-                     print("s.health = -2",s.health)
+                     print("s.health = -2")
                     break
                 elif no == 5 or no == 6:
                     print("You chose to move forward.You win! You have now entered challenge 3.")
                     if roll == "role 1":
-                     print("w.health = +2",w.health)
+                     print("w.health = +2")
                     elif roll == "role 2":
-                     print("s.health = +2",s.health)
-                    name4 = input("do you want to roll the dice? ")
+                     print("s.health = +2")
+                    name4 = input("do you want to roll the dice? \nyes/no/y/n\n")
                     if name4 == "yes" or name4 == "y":
                       print("You rolled a: ", no)
                       any.dice(no)
                       if no == 1 or no == 2 or no == 3:
                             print("You got a ",no,". you find the crown and return it to the King! Congrats,"+name+" you won the game.")
                             if roll == "role 1":
-                             print("w.logic = +2",w.logic)
+                             print("w.logic = +2")
                             elif roll == "role 2":
-                             print("s.logic = +2",s.logic)
+                             print("s.logic = +2")
                             quit()
                       elif no == 4 or no == 5 or no == 6:
                            print("you got a",no,". You couldn't find the crown. You lost the game! Goodbye,"+name+"")
                            if roll == "role 1":
-                            print("w.logic = -2",w.logic)
+                            print("w.logic = -2")
                            elif roll == "role 2":
-                            print("s.logic = -2",s.logic)
+                            print("s.logic = -2")
                            quit()
                     else: name4 == "no" or name4 == "n"
                     print("Goodbye,"+name+"")
@@ -199,7 +199,7 @@ if player1_score < player2_score: #if user score is less than the monster score 
     exit()
 if player2_score < player1_score: #if user score is greater than the monster score then the user wins
     print ("you win! Congrats," + name + ".") #sneds a congrats the user for winning
-    name1 = input("do you want to continue playing? ") #asks user if they want to continue playing
+    name1 = input("do you want to continue playing? \nyes/no/y/n\n") #asks user if they want to continue playing
     if response == "yes" or response == "y": #using if else statement for response from the user
         print("Here is your next challenge: ")
         a.show()
@@ -209,7 +209,7 @@ if player2_score < player1_score: #if user score is greater than the monster sco
     else: 
         print("I didn't understand that.\n")
 if player2_score == player1_score:
-    name2 = input("do you want to continue playing? ") #asks the user if they want to continue playing
+    name2 = input("do you want to continue playing? \nyes/no/y/n\n") #asks the user if they want to continue playing
     if response == "yes" or response == "y":
         print("Here is your next challenge: ")
         a.show()
